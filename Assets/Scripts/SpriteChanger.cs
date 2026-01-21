@@ -17,7 +17,10 @@ public class SpriteChanger : MonoBehaviour
         //if(Keyboard.current.anyKey.wasPressedThisFrame == true)
         //{
         //    //PickARandomColor();
-        //}
+        //
+
+        // not this one!!!! spriteRenderer.sprite.bounds.Contains(mousePos) this is at 0, 0 
+        // use this one!!!!!! spriteRenderer.bounds.Contains(mousePos) its at the right position
 
         //get mouse position 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
