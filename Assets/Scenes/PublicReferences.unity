@@ -376,6 +376,8 @@ MonoBehaviour:
   - {fileID: -983296130339864622, guid: f1d519290bc49d94dabd1833470c3eb4, type: 3}
   - {fileID: 1311752102108684794, guid: f3602b92cfe389345b3557ae233c7d0e, type: 3}
   - {fileID: 7817427211821529809, guid: a0061415aa2dea54ba084d671d7d39e7, type: 3}
+  - {fileID: 1597492703415919409, guid: 1cffdeb695458b944b296b828067e758, type: 3}
+  - {fileID: 8310752768603522028, guid: 3662a97cdce73b6438721e9cc78fa2a9, type: 3}
   randomNumber: 0
 --- !u!212 &1312847026
 SpriteRenderer:

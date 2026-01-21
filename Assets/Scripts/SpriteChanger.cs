@@ -1,12 +1,14 @@
+using NUnit.Framework;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class SpriteChanger : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Color col;
-    public Sprite[] barrels = new Sprite[3];
+    public List<Sprite> barrels;
     public int randomNumber;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,10 +20,15 @@ public class SpriteChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.anyKey.wasPressedThisFrame == true)
+        if (Keyboard.current.anyKey.wasPressedThisFrame)
         {
+            Debug.Log("try to change the sprite");
             //PickARandomColor();
-
+            if (barrels.Count > 0)
+            {
+                PickARandomColor();
+                PickARandomSprite();
+            }
 
             // not this one!!!! spriteRenderer.sprite.bounds.Contains(mousePos) this is at 0, 0 
             // use this one!!!!!! spriteRenderer.bounds.Contains(mousePos) its at the right position
@@ -38,8 +45,16 @@ public class SpriteChanger : MonoBehaviour
             {
                 spriteRenderer.color = Color.white;
             }
+
+            if (Mouse.current.leftButton.wasPressedThisFrame == true && barrels.Count > 0)
+            {
+                barrels.RemoveAt(0);
         }
+
+        }
+      
     }
+
     void PickARandomColor()
     {
         spriteRenderer.color = Random.ColorHSV();
@@ -48,7 +63,7 @@ public class SpriteChanger : MonoBehaviour
     void PickARandomSprite()
     {
         //get a random number between 0 and 2 
-        randomNumber = Random.Range(0, barrels.Length);
+        randomNumber = Random.Range(0, barrels.Count);
 
         //use that to set the sprite
         spriteRenderer.sprite = barrels[randomNumber];
