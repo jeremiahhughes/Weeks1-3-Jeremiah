@@ -9,6 +9,7 @@ public class MusicNote : MonoBehaviour
     public AnimationCurve shrinkCurve;
     public float t = 0;
     Vector3 mousePos;
+    public static bool isHovering;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +36,7 @@ public class MusicNote : MonoBehaviour
 
         if (distance < 100)
         {
+            isHovering = true; // Tells the face sprite its hovering over a note
             if (t < 1)
             {
                 t += Time.deltaTime * 2; // Shrinks the music note sprite when the mouse cursor is on 
@@ -42,6 +44,7 @@ public class MusicNote : MonoBehaviour
         }
         else
         {
+            isHovering = false; // Tells the face sprite the mouse cursor is away from it
             if (t > 0)
             {
                 t -= Time.deltaTime * 2; // Goes back to its normal size when the mouse cursor is off
