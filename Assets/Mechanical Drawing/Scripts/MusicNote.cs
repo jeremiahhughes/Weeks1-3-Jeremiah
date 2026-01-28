@@ -22,14 +22,14 @@ public class MusicNote : MonoBehaviour
     {
         // Moving the notes to the right on the x-axis with Time.deltaTime
         transform.position += new Vector3(1,0,0) * speed * Time.deltaTime;
-        // Going from World to ScreenPoint and getting transform.position
+        // used these lines of code from required reading 1-4 stay on the screen at 14:35 https://www.youtube.com/watch?v=GDGZg8QvKog&t=888s
         Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         if(screenPos.x < 0 || screenPos.x > Screen.width)
         {
            speed = speed * -1;
         }
         
-        mousePos = Input.mousePosition; // https://www.youtube.com/watch?v=EWxxFmiWlbc&t=111s citing the line of code i used from this video at timestamp 2:46
+        mousePos = Input.mousePosition; // citing the line of code i used from this video at timestamp 2:46 https://www.youtube.com/watch?v=EWxxFmiWlbc&t=111s
 
         // Showing how close the cursor is to the center of the note
         float distance = Vector2.Distance(mousePos, screenPos);
