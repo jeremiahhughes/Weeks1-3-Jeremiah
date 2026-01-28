@@ -44,7 +44,7 @@ public class MusicNote : MonoBehaviour
         }
         else
         {
-            isHovering = false; // Tells the face sprite the mouse cursor is away from it
+            isHovering = false; // Tells the face sprite its not hovering over a note
             if (t > 0)
             {
                 t -= Time.deltaTime * 2; // Goes back to its normal size when the mouse cursor is off

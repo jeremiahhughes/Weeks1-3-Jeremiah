@@ -17,7 +17,7 @@ public class FaceReaction : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (MusicNote.isHovering)
         {
             // Swap to happy face
